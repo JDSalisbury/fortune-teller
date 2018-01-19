@@ -1,10 +1,12 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class FortuneTeller {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-
+		DecimalFormat formatter = new DecimalFormat("#,###.00");
+		
 		System.out.print("What is your first name? ");
 		String firstName = input.nextLine();
 		if (firstName.toLowerCase().equals("quit")) {
@@ -75,9 +77,9 @@ public class FortuneTeller {
 		if (siblings == 1) {
 			vacation = "Toronto, Canada";
 		} else if (siblings == 2) {
-			vacation = "Portland, Oregon";
+			vacation = "Chicago, Illinois";
 		} else if (siblings == 3) {
-			vacation = "Chernobyl, Ukraine";
+			vacation = "Miami, Florida";
 		} else if (siblings > 3) {
 			vacation = "Detroit, Michigan";
 		} else {
@@ -109,17 +111,19 @@ public class FortuneTeller {
 		// System.out.println(vehicle);
 		// Bank Balance
 
-		int bank = birthMonth;
-		if (birthMonth >= 4) {
-			bank = 42;
-		} else if (birthMonth >= 9) {
-			bank = 20000;
+		double bank = birthMonth;
+		if (birthMonth <= 4) {
+			bank = 42.00;
+		} else if (birthMonth >= 9 && birthMonth <=12) {
+			bank = 20000.00;
+		} else if(birthMonth >= 5 && birthMonth <= 8) {
+			bank = 1989.00;
 		} else {
-			bank = 1989;
+			bank = 0.00;
 		}
 		// System.out.println(bank);
 
-		System.out.println(firstName + " " + lastName + " will retire in " + retirement + " years with $" + bank
+		System.out.println(firstName + " " + lastName + " will retire in " + retirement + " years with $" + formatter.format(bank)
 				+ " in the bank, a vacation home in " + vacation + ", and travel by " + vehicle + ".");
 
 		input.close();
