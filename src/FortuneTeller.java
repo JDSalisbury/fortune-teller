@@ -8,14 +8,14 @@ public class FortuneTeller {
 		System.out.print("What is your first name? ");
 		String firstName = input.nextLine();
 		if (firstName.toLowerCase().equals("quit")) {
-			System.out.println("Nobody like a quitter...");
+			System.out.println("Nobody likes a quitter...");
 			System.exit(0);
 		}
 
 		System.out.print("What is your last name? ");
 		String lastName = input.nextLine();
 		if (lastName.toLowerCase().equals("quit")) {
-			System.out.println("Nobody like a quitter...");
+			System.out.println("Nobody likes a quitter...");
 			System.exit(0);
 		}
 
@@ -23,34 +23,34 @@ public class FortuneTeller {
 		String years = input.next();
 		int age = 0;
 		if (years.toLowerCase().equals("quit")) {
-			System.out.println("Nobody like a quitter...");
+			System.out.println("Nobody likes a quitter...");
 			System.exit(0);
-		}else {
+		} else {
 			age = Integer.parseInt(years);
 		}
-		
-		 int birthMonth = 0;
-		 System.out.print("What is your Birth Month(for January please enter 1, for December please enter 12)? ");
+
+		int birthMonth = 0;
+		System.out.print("What is your Birth Month(for January please enter 1, for December please enter 12)? ");
 		String monthNumber = input.next();
 		if (monthNumber.toLowerCase().equals("quit")) {
-			System.out.println("Nobody like a quitter...");
+			System.out.println("Nobody likes a quitter...");
 			System.exit(0);
-		}else {
+		} else {
 			birthMonth = Integer.parseInt(monthNumber);
 		}
-		
+
 		input.nextLine();
 
 		System.out.print("What is your Favorite ROYGBIV Color? ");
 		String color = input.nextLine().toLowerCase();
 		if (color.toLowerCase().equals("quite")) {
-			System.out.println("Nobody like a quitter...");
+			System.out.println("Nobody likes a quitter...");
 			System.exit(0);
 		}
 
 		do {
 			if (color.equals("help")) {
-				System.out.println(
+				System.out.print(
 						"The ROYGBIV colors are red, orange, yellow, green, blue, indigo, violet. Please choose again.");
 				color = input.nextLine().toLowerCase();
 			}
