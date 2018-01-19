@@ -16,10 +16,16 @@ public class FortuneTeller {
 
 		System.out.print("What is your Birth Month(for January please enter 1, for December please enter 12)? ");
 		int birthMonth = input.nextInt();
+		
 		input.nextLine();
+		
 		System.out.print("What is your Favorite ROYGBIV Color? ");
 		String color = input.nextLine().toLowerCase();
-
+		if (color.equals("help")) {
+			System.out.println("The ROYGBIV colors are red, orange, yellow, green, blue, indigo, violet. Please choose again.");
+		}
+		color = input.nextLine().toLowerCase();
+		
 		System.out.print("How many Siblings do you have? ");
 		int siblings = input.nextInt();
 
@@ -32,10 +38,10 @@ public class FortuneTeller {
 			retirement = 60;
 		}
 
-		System.out.println(retirement);
+		// System.out.println(retirement);
 
 		// vacation destination
-		String vacation;
+		String vacation = null;
 		if (siblings == 1) {
 			vacation = "Toronto, Canada";
 		} else if (siblings == 2) {
@@ -47,29 +53,47 @@ public class FortuneTeller {
 		} else {
 			vacation = "Columbus, Ohio";
 		}
-		System.out.println(vacation);
-		
+		// System.out.println(vacation);
+
 		// Vehicle
-		String vehicle;
+		String vehicle = null;
 		if (color.equals("red")) {
 			vehicle = "Bike";
-		}else if(color.equals("orange")) {
+		} else if (color.equals("orange")) {
 			vehicle = "Hand Glider";
-			
-		}else if(color.equals("yellow")) {
+
+		} else if (color.equals("yellow")) {
 			vehicle = "Roller Blades";
-		}else if(color.equals("green")) {
+		} else if (color.equals("green")) {
 			vehicle = "Horse";
-		}else if(color.equals("blue")) {
+		} else if (color.equals("blue")) {
 			vehicle = "Imagination via cape";
-		}else if(color.equals("indigo")) {
+		} else if (color.equals("indigo")) {
 			vehicle = "Rainbows, work on your rain dance";
-		}else if(color.equals("violet")) {
+		} else if (color.equals("violet")) {
 			vehicle = "Sedan Chair";
-		}else {
-			System.out.println("Please enter red, orange, yellow, green, blue, indigo, or violet.");
-		}
+		} else {
+			vehicle = "nothing, The ROYGBIV colors are red, orange, yellow, green, blue, indigo, violet.";
+		}	
 		
+		
+		// System.out.println(vehicle);
+		// Bank Balance
+
+		int bank = birthMonth;
+		if (birthMonth >= 4) {
+			bank = 42;
+		} else if (birthMonth >= 9) {
+			bank = 20000;
+		} else {
+			bank = 1989;
+		}
+		// System.out.println(bank);
+
+		System.out.println(firstName + " " + lastName + " will retire in " + retirement + " years with $" + bank
+				+ " in the bank, a vacation home in " + vacation + ", and travel by " + vehicle + ".");
+
+		input.close();
 	}
 
 }
