@@ -4,7 +4,7 @@ public class FortuneTeller {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-
+		
 		System.out.print("What is your first name? ");
 		String firstName = input.nextLine();
 
@@ -25,12 +25,15 @@ public class FortuneTeller {
 		do {
 		if (color.equals("help")) {
 			System.out.println("The ROYGBIV colors are red, orange, yellow, green, blue, indigo, violet. Please choose again.");
+			color = input.nextLine().toLowerCase();
 		}
-		color = input.nextLine().toLowerCase();
+		
 		}while(color.equals("help"));
 		
 		System.out.print("How many Siblings do you have? ");
 		int siblings = input.nextInt();
+		
+		
 
 		// Retirement Years
 
