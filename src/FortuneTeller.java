@@ -31,9 +31,10 @@ public class FortuneTeller {
 			age = Integer.parseInt(years);
 		}
 
-		int birthMonth = 0;
+		
 		System.out.print("What is your Birth Month(for January please enter 1, for December please enter 12)? ");
 		String monthNumber = input.next();
+		int birthMonth = 0;
 		if (monthNumber.toLowerCase().equals("quit")) {
 			System.out.println("Nobody likes a quitter...");
 			System.exit(0);
@@ -59,7 +60,14 @@ public class FortuneTeller {
 		} while (color.equals("help"));
 
 		System.out.print("How many Siblings do you have? ");
-		int siblings = input.nextInt();
+		String broAndSis = input.next();
+		int siblings = 0;
+		if (broAndSis.toLowerCase().equals("quit")) {
+			System.out.println("Nobody likes a quitter...");
+			System.exit(0);
+		} else {
+			birthMonth = Integer.parseInt(broAndSis);
+		}
 
 		// Retirement Years
 
